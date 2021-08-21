@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <title>Modul 01 - 32827</title>
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+  ></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Kalkulator BMI</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-label position="floating">Tinggi Badan</ion-label>
+        <ion-input id="height-input"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Berat Badan</ion-label>
+        <ion-input id="weight-input"></ion-input>
+      </ion-item>
+
+      <ion-grid class="ion-text-center ion-margin">
+        <ion-row>
+          <ion-col>
+            <ion-button id="bmi-btn">
+              <ion-icon slot="start" name="calculator-outline"></ion-icon>
+              Hitung BMI
+            </ion-button>
+          </ion-col>
+
+          <ion-col>
+            <ion-button fill="outline" id="reset-btn">
+              <ion-icon slot="start" name="refresh-outline"></ion-icon>
+              Reset BMI
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card class="ion-text-center ion-padding">
+        <ion-card-header>
+          <ion-card-title>BMI</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p id="bmi-value">Belum dihitung!</p>
+          <p id="bmi-result">Mohon hitung terlebih dahulu!</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-app>
+
+  <script src="app.js" defer></script>
+</body>
