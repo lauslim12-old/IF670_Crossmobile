@@ -11,5 +11,6 @@ After you have done that, please do:
 ```bash
 git clone git@github.com:lauslim12/IF670_Crossmobile.git
 cd IF670_Crossmobile/<YOUR_PREFERRED_LAB_MODULE>
+npm install
 ionic serve
 ```
