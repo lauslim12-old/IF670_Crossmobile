@@ -42,7 +42,7 @@ The folders `android` and `build` will not be committed to the repository.
 
 Several helper scripts have been set up at this repository to help with the development.
 
-- `make clean` to destroy all `node_modules` folders in the repository.
+- `make clean` to destroy all `node_modules`, `android`, and `build` folders in the repository.
 - `make move` to move a single folder from my WSL to my `D` disk in Windows. Accepts a single `FOLDER_NAME` as a parameter.
 
 Examples:
@@ -54,7 +54,3 @@ $ make clean
 $ make move FOLDER_NAME=Modul04_32827/32827-NicholasDwiartoW/android
 # no output, will appear in 'D:' disk
 ```
-
-## License
-
-MIT License.
