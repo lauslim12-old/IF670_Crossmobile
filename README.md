@@ -36,6 +36,8 @@ Sometimes, `ionic capacitor copy android` will not successfully install all of t
 
 After you have done that, you will see an `android` folder. Open it on Android Studio, and run it as usual (with the emulator) or you can build it as APK.
 
+Note that the process of `ionic capacitor sync android` and the building of the APK must happen in the same OS. You cannot perform `ionic capacitor sync android` in WSL, copy the resulting folder to the Windows OS, and then trying to build the APK. You have to also perform `ionic capacitor sync android` in the OS that you want to use to build the application.
+
 The folders `android` and `build` will not be committed to the repository.
 
 ## Scripts
