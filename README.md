@@ -38,13 +38,11 @@ After you have done that, you will see an `android` folder. Open it on Android S
 
 Note that the process of `ionic capacitor sync android` and the building of the APK must happen in the same OS. You cannot perform `ionic capacitor sync android` in WSL, copy the resulting folder to the Windows OS, and then trying to build the APK. You have to also perform `ionic capacitor sync android` in the OS that you want to use to build the application.
 
-The folders `android` and `build` will not be committed to the repository.
-
 ## Scripts
 
 Several helper scripts have been set up at this repository to help with the development.
 
-- `make clean` to destroy all `node_modules`, `android`, and `build` folders in the repository.
+- `make clean` to destroy all `node_modules`, and `build` folders in the repository.
 - `make move` to move a single folder from my WSL to my `D` disk in Windows. Accepts a single `FOLDER_NAME` as a parameter.
 
 Examples:
