@@ -22,7 +22,13 @@ npm install
 ionic serve
 ```
 
-For lab module 09 and onwards, you may have to `export REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY` so you can use the Google Maps API.
+For lab module 09 and onwards, you may have to perform the following command in order to use the Google Maps API:
+
+```bash
+export REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+```
+
+For lab module 10, you have to set up XAMPP / PHP MySQL webserver and use the `api` project. Ensure that the name of the database, username, and password are correct.
 
 ## Native-Compilation
 
