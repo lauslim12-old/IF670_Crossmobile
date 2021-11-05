@@ -22,6 +22,8 @@ npm install
 ionic serve
 ```
 
+For lab module 09 and onwards, you may have to `export REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY` so you can use the Google Maps API.
+
 ## Native-Compilation
 
 If you want to run the apps natively, you can do so by following these steps below.
