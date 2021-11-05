@@ -18,6 +18,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import { addOutline } from 'ionicons/icons';
 import { useContext } from 'react';
 import MemoriesContext from '../data/memories-context';
@@ -57,6 +58,15 @@ const GoodMemories = () => {
               <IonCol>
                 <IonCard>
                   <IonImg src={memory.base64Url} alt={memory.title} />
+
+                  <GoogleMap
+                    mapContainerStyle={{ width: '90vw', margin: '0 auto', height: '75vh' }}
+                    center={{ lat: memory.lat, lng: memory.lng }}
+                    zoom={18}
+                  >
+                    <Marker position={{ lat: memory.lat, lng: memory.lng }} />
+                  </GoogleMap>
+
                   <IonCardHeader>
                     <IonCardTitle>{memory.title}</IonCardTitle>
                   </IonCardHeader>

@@ -21,10 +21,10 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import { cameraSharp } from 'ionicons/icons';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import MemoriesContext from '../data/memories-context';
-import { LoadScript, GoogleMap, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import { Geolocation } from '@capacitor/geolocation';
 
 type State = {
@@ -55,12 +55,16 @@ async function base64FromFilePath(path: string): Promise<string> {
 
 const NewMemory = () => {
   const [chosenMemoryType, setChosenMemoryType] = useState('good' as 'good' | 'bad');
-  const [lat, setLat] = useState(0);
-  const [lng, setLng] = useState(0);
+  const [lat, setLat] = useState(-6.257608009415188);
+  const [lng, setLng] = useState(106.61837051975617);
   const [takenPhoto, setTakenPhoto] = useState<State>();
   const memoriesCtx = useContext(MemoriesContext);
   const history = useHistory();
   const titleRef = useRef<HTMLIonInputElement>(null);
+
+  useEffect(() => {
+    getCurrentPosition();
+  }, []);
 
   const handleChangeChosenMemory = (e: CustomEvent) => {
     setChosenMemoryType(e.detail.value);
@@ -85,7 +89,14 @@ const NewMemory = () => {
       directory: Directory.Data,
     });
 
-    memoriesCtx.addMemory(filename, base64Data, enteredTitle.toString(), chosenMemoryType);
+    memoriesCtx.addMemory(
+      filename,
+      base64Data,
+      enteredTitle.toString(),
+      chosenMemoryType,
+      lat,
+      lng
+    );
     if (history.length > 0) {
       history.goBack();
     } else {
@@ -100,6 +111,11 @@ const NewMemory = () => {
       quality: 80,
       width: 500,
     });
+
+    // pwa elements, allow testing on web
+    if (!image.path && image.webPath) {
+      image.path = image.webPath;
+    }
 
     if (!image || !image.path || !image.webPath) {
       return;
@@ -168,15 +184,14 @@ const NewMemory = () => {
 
           <IonRow>
             <IonCol>
-              <LoadScript googleMapsApiKey="">
-                <GoogleMap
-                  mapContainerStyle={{ width: '100%', height: '100%' }}
-                  center={{ lat, lng }}
-                  zoom={18}
-                >
-                  <Marker position={{ lat, lng }} />
-                </GoogleMap>
-              </LoadScript>
+              <GoogleMap
+                mapContainerStyle={{ width: '90vw', margin: '0 auto', height: '75vh' }}
+                center={{ lat, lng }}
+                zoom={18}
+                onClick={selectPosition}
+              >
+                <Marker position={{ lat, lng }} />
+              </GoogleMap>
             </IonCol>
           </IonRow>
 

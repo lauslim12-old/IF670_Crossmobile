@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { LoadScript } from '@react-google-maps/api';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LoadScript
+      googleMapsApiKey={
+        process.env.REACT_APP_GOOGLE_MAPS_API_KEY ? process.env.REACT_APP_GOOGLE_MAPS_API_KEY : ''
+      }
+    >
+      <App />
+    </LoadScript>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// browser native pwa
+defineCustomElements(window);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
