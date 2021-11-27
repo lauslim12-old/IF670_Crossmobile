@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "816384994208",
+    "project_id": "if670-module12",
+    "storage_bucket": "if670-module12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816384994208:android:7d43a9c8db8e6ecc7612c5",
+        "android_client_info": {
+          "package_name": "umn.ac.id.modul12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816384994208-p1lc5rq3nppm4an44eld17r81v9mnb80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnDvcyE23Orm_rKsenzfDycBUtVKT1uq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816384994208-p1lc5rq3nppm4an44eld17r81v9mnb80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
