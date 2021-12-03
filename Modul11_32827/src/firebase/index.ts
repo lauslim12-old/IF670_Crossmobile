@@ -7,12 +7,12 @@ import { Memory } from '../data/memories-context';
 
 const getApp = () =>
   initializeApp({
-    apiKey: 'AIzaSyDynN9YJAXGAghDY4bx3tBL7o12GAKWUb0',
-    authDomain: 'if670-module11.firebaseapp.com',
-    projectId: 'if670-module11',
-    storageBucket: 'if670-module11.appspot.com',
-    messagingSenderId: '443369563951',
-    appId: '1:443369563951:web:e574817359cf521afea3da',
+    apiKey: 'AIzaSyDHsNG1jImfb2uc_5daQ7tJxI2tPnpTMcE',
+    authDomain: 'if670-m11.firebaseapp.com',
+    projectId: 'if670-m11',
+    storageBucket: 'if670-m11.appspot.com',
+    messagingSenderId: '407508499747',
+    appId: '1:407508499747:web:3cbda881e3057fb8e1a096',
   });
 
 const firestore = () => getFirestore(getApp());
