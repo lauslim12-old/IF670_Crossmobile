@@ -1,6 +1,6 @@
 # IF670 - Crossmobile
 
-This is the repository used to store Mobile Cross-Platform (IF670) class assignments in my university.
+This is the repository used to store Mobile Cross-Platform (IF670) class assignments in my university. This repository is already done and is considered finished.
 
 ## Requirements
 
